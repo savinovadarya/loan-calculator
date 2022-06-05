@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="calculator">
+
+			<div class="calculator__info">
+
+				<div class="calculator__item">
+					<label class="item__name" for="cost">Стоимость недвижимости, ₽</label>
+					<input value="2400000" id="cost" type="text">
+				</div>
+
+				<div class="calculator__item">
+					<label class="item__name" for="payment">Первоначальный взнос, ₽</label>
+					<input onblur="this.value = this.value.replace(/[^\d]/g, '').replace(/\B(?=(?:\d{3})+(?!\d))/g, ' ')" onfocus="this.value = this.value.replace(/[^\d]/g, '').replace(/\B(?=(?:\d{3})+(?!\d))/g, ' ')" value="500000" id="payment" type="text">
+				</div>
+
+				<div class="calculator__items">
+					<div class="calculator__item2">
+						<label class="item__name" for="term">Срок</label>
+						<select id="term" type="text">
+							<option value="12">1 год</option>
+							<option value="24">2 года</option>
+							<option value="48">4 года</option>
+							<option value="60">5 лет</option>
+							<option value="120">10 лет</option>
+							<option value="180">15 лет</option>
+							<option value="240">20 лет</option>
+							<option value="300" selected>25 лет</option>
+							<option value="360">30 лет</option>
+						</select>
+					</div>
+
+					<div class="calculator__item2">
+						<label class="item__name" for="percent">Ставка, %</label>
+						<input value="9.6" id="percent" type="text">
+					</div>
+				</div>
+			</div>
+
+			<div class="calculator__statistics">
+
+				<div class="graph-info">
+					<div class="credit">Кредит</div>
+					<div class="overpayment">Переплата</div>
+				</div>
+
+				<div class="info">
+					<h2 class="info__title">Результаты расчёта</h2>
+					<div class="info__positions">
+
+						<div class="info__position">
+							<div class="info__position-title">Сумма кредита</div>
+							<div class="info__position-result">Результат</div>
+						</div>
+
+						<div class="info__position">
+							<div class="info__position-title">Ежемесячный платёж</div>
+							<div class="info__position-result2">Результат</div>
+						</div>
+
+						<div class="info__position">
+							<div class="info__position-title">Переплата по кредиту</div>
+							<div class="info__position-result3">Результат</div>
+						</div>
+
+						<div class="info__position">
+							<div class="info__position-title">Общая сумма выплат</div>
+							<div class="info__position-result4">Результат</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="js/script.js"></script>
+</body>
+
+</html>
